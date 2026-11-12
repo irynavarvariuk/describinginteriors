@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Describing buildings and places: vocabulary practice by Iryna Varvariuk</title>
+<style>
+:root{
+  --brown:#43492D;
+  --cream:#F1F2EA;
+  --ink:#1a1a1a;
+  --grey:#5A5D4E;
+  --bad:#8a2f1f;
+  --r:10px;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:Arial,Helvetica,sans-serif;font-size:17px;line-height:1.5;color:var(--ink);background:#FDFCF8}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--brown);outline-offset:2px}
+.hero :focus-visible{outline-color:#fff}
+.wrap{max-width:1080px;margin:0 auto;padding:0 24px}
+
+/* hero */
+.hero{background:var(--brown);color:#fff;padding:28px 0 48px}
+.credit{margin:0 0 56px;font-size:15px;color:#DCDFCC}
+.credit strong{color:#fff}
+.credit a{color:#fff;text-underline-offset:3px}
+.hero h1{font-size:clamp(36px,7vw,68px);line-height:1.03;letter-spacing:-.015em;margin:0 0 18px;max-width:15ch}
+.lead{font-size:20px;max-width:48ch;margin:0;color:#EEF0E5}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:10;background:#FDFCF8;border-bottom:1px solid var(--brown)}
+.nav .wrap{display:flex;gap:8px;overflow-x:auto;padding-top:10px;padding-bottom:10px}
+.nav a{white-space:nowrap;text-decoration:none;color:var(--brown);background:#fff;border:1px solid var(--brown);border-radius:var(--r);padding:6px 14px;font-size:15px}
+.nav a:hover{background:var(--brown);color:#fff}
+
+/* exercise blocks */
+.ex{padding:56px 0 4px;scroll-margin-top:56px}
+.ex h2{font-size:28px;line-height:1.2;margin:0 0 6px}
+.meta{margin:0;color:var(--grey);font-size:15px}
+.aim{margin:14px 0 8px;max-width:72ch}
+.how{margin:0 0 22px;max-width:72ch;color:var(--grey)}
+.toolbar{display:flex;flex-wrap:wrap;gap:8px;align-items:center;margin:0 0 16px}
+.score{margin-left:auto;font-weight:bold}
+.btn{font:inherit;font-size:15px;cursor:pointer;color:#fff;background:var(--brown);border:1px solid var(--brown);border-radius:var(--r);padding:8px 16px}
+.btn.alt{color:var(--brown);background:#fff}
+.btn:hover{opacity:.88}
+
+/* tabs */
+.tabs{display:flex;flex-wrap:wrap;gap:8px;margin:0 0 16px}
+.tab{font:inherit;font-size:15px;cursor:pointer;color:var(--brown);background:#fff;border:1px solid var(--brown);border-radius:var(--r);padding:7px 14px}
+.tab.on{color:#fff;background:var(--brown)}
+.hide{display:none}
+
+/* cards and inputs */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(270px,1fr));gap:12px}
+.card{background:#fff;border:1px solid var(--brown);border-radius:var(--r);padding:12px 14px}
+.q{font-weight:bold;margin:0 0 8px}
+.row{display:flex;align-items:center;gap:8px}
+.in{font:inherit;width:100%;color:var(--ink);background:#fff;border:1px solid var(--brown);border-radius:8px;padding:8px 10px}
+.in.ok{color:#fff;background:var(--brown)}
+.in.bad{color:var(--bad);border:2px dashed var(--bad);padding:7px 9px}
+.in.rev{color:var(--grey);background:var(--cream);font-style:italic}
+.mark{min-width:1.2em;font-weight:bold}
+.aux{min-height:1.2em;margin-top:6px;font-size:14px;color:var(--grey)}
+
+/* sentence lists */
+.panel{background:var(--cream);border-radius:var(--r);padding:8px 20px}
+ol.sent{margin:0;padding:0;list-style:none;counter-reset:n}
+ol.sent li{counter-increment:n;display:flex;flex-wrap:wrap;align-items:baseline;gap:0 4px;padding:12px 0 12px 36px;position:relative;border-bottom:1px solid #DCDFCF}
+ol.sent li:last-child{border-bottom:0}
+ol.sent li::before{content:counter(n);position:absolute;left:0;top:12px;font-weight:bold;color:var(--brown)}
+.gap{display:inline-flex;align-items:baseline;white-space:nowrap}
+.pf{font-weight:bold}
+.in.g{display:inline-block;width:auto;padding:2px 6px;border-width:0 0 2px 0;border-radius:4px 4px 0 0;background:#fff}
+.in.g.ok{color:#fff;background:var(--brown)}
+.in.g.bad{border:0;border-bottom:2px dashed var(--bad);padding:2px 6px}
+.col{flex-basis:100%;font-size:14px;color:var(--grey);min-height:0}
+
+/* upgrade cards */
+.stack{display:grid;gap:14px}
+.plain{margin:0 0 10px;padding:12px 14px;color:#fff;background:var(--brown);border-radius:var(--r);font-size:18px}
+.chips{display:flex;flex-wrap:wrap;gap:6px;margin:0 0 10px}
+.chip{font-size:14px;color:var(--ink);background:#fff;border:1px solid var(--brown);border-radius:8px;padding:3px 10px}
+.chip.on{color:#fff;background:var(--brown)}
+.label{margin:0 0 6px;font-size:15px;color:var(--grey)}
+textarea{font:inherit;width:100%;min-height:84px;resize:vertical;color:var(--ink);background:#fff;border:1px solid var(--brown);border-radius:8px;padding:10px}
+.status{margin:8px 0 0;font-size:15px;color:var(--grey)}
+.model{margin:10px 0 0;padding:10px 14px;background:var(--cream);border:1px dashed var(--brown);border-radius:var(--r)}
+
+/* multiple choice */
+.opts{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+.opt{font:inherit;cursor:pointer;color:var(--brown);background:#fff;border:1px solid var(--brown);border-radius:8px;padding:6px 16px}
+.opt.right{color:#fff;background:var(--brown)}
+.opt.wrong{color:var(--bad);border:2px dashed var(--bad);padding:5px 15px}
+.opt:disabled{cursor:default}
+.why{margin:10px 0 0;font-size:15px;color:var(--grey)}
+.mq{font-size:18px;margin:0}
+
+/* create */
+.field{display:flex;flex-wrap:wrap;gap:12px;align-items:center;margin:0 0 12px}
+select{font:inherit;color:var(--ink);background:#fff;border:1px solid var(--brown);border-radius:8px;padding:8px 10px;max-width:100%}
+.big{min-height:200px}
+.counter{font-weight:bold;margin:10px 0 14px}
+.group{margin:0 0 12px}
+.group h3{font-size:16px;margin:0 0 6px}
+.check{display:grid;gap:6px;margin:18px 0 0}
+.check label{display:flex;gap:10px;align-items:flex-start;cursor:pointer}
+.check input{margin-top:5px;accent-color:var(--brown)}
+
+footer{margin-top:72px;padding:28px 0 40px;color:#fff;background:var(--brown)}
+footer p{margin:0;font-size:15px}
+footer a{color:#fff;text-underline-offset:3px}
+
+@media (max-width:600px){
+  body{font-size:16px}
+  .hero{padding-bottom:36px}
+  .credit{margin-bottom:36px}
+  .panel{padding:4px 14px}
+  .score{margin-left:0;flex-basis:100%}
+}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <p class="credit">Created by <strong>Iryna Varvariuk</strong>. Her teaching ideas are on Instagram: <a href="https://www.instagram.com/irenesteaching/" target="_blank" rel="noopener">@irenesteaching</a></p>
+    <h1>Describing buildings and places</h1>
+    <p class="lead">Six exercises that take the lesson vocabulary from memory retrieval to free production. Work through them in order: the support gets lighter each time.</p>
+  </div>
+</header>
+
+<nav class="nav" aria-label="Exercises">
+  <div class="wrap">
+    <a href="#ex1">1 Recall</a>
+    <a href="#ex2">2 Gaps with hints</a>
+    <a href="#ex3">3 Upgrade</a>
+    <a href="#ex4">4 Small words</a>
+    <a href="#ex5">5 Modifiers</a>
+    <a href="#ex6">6 Create</a>
+  </div>
+</nav>
+
+<main class="wrap">
+
+<!-- 1 -->
+<section class="ex" id="ex1">
+  <h2>1. Recall the word</h2>
+  <p class="meta">Controlled practice. Focus: memory retrieval of all target vocabulary.</p>
+  <p class="aim">Aim: retrieve the English form from its meaning, with no sentence and no help, so the word has to come from memory.</p>
+  <p class="how">Read the Ukrainian prompt and type the English word or expression. Press Enter or Check. Use Hint only after a real attempt. Patterns with dots stand for words you can choose.</p>
+  <div id="recall">
+    <div class="toolbar"><span class="score">Total: <span id="recall-total">0 / 0</span></span></div>
+    <div class="tabs" role="tablist"></div>
+    <div class="panels"></div>
+  </div>
+</section>
+
+<!-- 2 -->
+<section class="ex" id="ex2">
+  <h2>2. Fill the gap, with first letters</h2>
+  <p class="meta">Controlled practice. Focus: using the word in context.</p>
+  <p class="aim">Aim: choose the right word because the sentence needs it, not because you remember a list. The first letters keep the task manageable.</p>
+  <p class="how">Type the rest of the word, or the whole word. Hyphens and capital letters do not matter.</p>
+  <div id="gaps1">
+    <div class="toolbar">
+      <button class="btn" data-a="check" type="button">Check</button>
+      <button class="btn alt" data-a="reveal" type="button">Show answers</button>
+      <button class="btn alt" data-a="reset" type="button">Clear</button>
+      <span class="score" aria-live="polite"></span>
+    </div>
+    <div class="panel"><ol class="sent"></ol></div>
+  </div>
+</section>
+
+<!-- 3 -->
+<section class="ex" id="ex3">
+  <h2>3. Upgrade the sentence</h2>
+  <p class="meta">Semi-controlled practice. Focus: sentence-level production.</p>
+  <p class="aim">Aim: say the same idea more precisely. You choose the structure, and the lesson vocabulary has to carry the meaning.</p>
+  <p class="how">Rewrite each plain sentence in your own words. Use at least two of the units shown. They light up when you use them. Then compare with the model: yours can be different and still correct.</p>
+  <div class="stack" id="upgrade"></div>
+</section>
+
+<!-- 4 -->
+<section class="ex" id="ex4">
+  <h2>4. The small words that hold collocations together</h2>
+  <p class="meta">Controlled practice. Focus: accuracy of prepositions, articles and determiners.</p>
+  <p class="aim">Aim: notice the tiny words inside collocations. Learners often know the content words and still lose marks on of, an, its and any.</p>
+  <p class="how">Type the one missing word. After checking, the full collocation appears under the sentence.</p>
+  <div id="gaps2">
+    <div class="toolbar">
+      <button class="btn" data-a="check" type="button">Check</button>
+      <button class="btn alt" data-a="reveal" type="button">Show answers</button>
+      <button class="btn alt" data-a="reset" type="button">Clear</button>
+      <span class="score" aria-live="polite"></span>
+    </div>
+    <div class="panel"><ol class="sent"></ol></div>
+  </div>
+</section>
+
+<!-- 5 -->
+<section class="ex" id="ex5">
+  <h2>5. Choose the modifier</h2>
+  <p class="meta">Controlled practice. Focus: modifiers and intensifiers.</p>
+  <p class="aim">Aim: see that modifiers are not interchangeable. Extreme adjectives such as hideous reject very, overly adds criticism, and somewhat softens.</p>
+  <p class="how">Click the option that fits. A short explanation appears after each answer.</p>
+  <div id="mcq">
+    <div class="toolbar">
+      <button class="btn alt" data-a="reset" type="button">Start again</button>
+      <span class="score" aria-live="polite"></span>
+    </div>
+    <div class="stack"></div>
+  </div>
+</section>
+
+<!-- 6 -->
+<section class="ex" id="ex6">
+  <h2>6. Describe a place</h2>
+  <p class="meta">Freer practice. Focus: extended production and self-assessment.</p>
+  <p class="aim">Aim: use the vocabulary to say something you actually think. The counter shows how much of the lesson you have activated.</p>
+  <p class="how">Choose a topic and write 5 to 7 sentences: what it looks like, how it feels, and your opinion. Try to light up at least 10 units.</p>
+  <div id="create">
+    <div class="field">
+      <label for="topic">Topic:</label>
+      <select id="topic">
+        <option>A place you would love to live in</option>
+        <option>The worst hotel or café you have ever visited</option>
+        <option>A building in your city that people love or hate</option>
+        <option>A holiday place you would recommend to a friend</option>
+      </select>
+    </div>
+    <textarea class="big" id="essay" aria-label="Your description" placeholder="Start writing here…"></textarea>
+    <p class="counter" aria-live="polite"><span id="cnt">0</span> of 10 units used</p>
+    <div id="chipgroups"></div>
+    <div class="check">
+      <label><input type="checkbox"> I wrote at least one sentence with looks/feels …, but not in a … way.</label>
+      <label><input type="checkbox"> I used at least one modifier, such as overly, somewhat, absolutely or downright.</label>
+      <label><input type="checkbox"> I used at least two patterns, not only adjectives.</label>
+      <label><input type="checkbox"> I checked the small words in my collocations: of, an, its, any, to.</label>
+    </div>
+    <div class="toolbar" style="margin-top:18px">
+      <button class="btn" id="copy" type="button">Copy my text</button>
+      <button class="btn alt" id="clearEssay" type="button">Clear</button>
+      <span class="score" id="copied" aria-live="polite"></span>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <p>Materials created by Iryna Varvariuk. Instagram: <a href="https://www.instagram.com/irenesteaching/" target="_blank" rel="noopener">@irenesteaching</a></p>
+  </div>
+</footer>
+
+<script>
+(function(){
+"use strict";
+var $ = function(s, r){ return (r || document).querySelector(s); };
+
+/* ---------- helpers ---------- */
+function norm(s){ return s.toLowerCase().normalize("NFD").replace(/[\u0300-\u036f]/g,"").replace(/[’]/g,"'").trim(); }
+function normAns(s){ return norm(s).replace(/^(a|an|the)\s+/,"").replace(/[^a-z0-9]+/g,""); }
+function wordsOf(s){ return " " + norm(s).replace(/[^a-z' ]+/g," ").replace(/\s+/g," ").trim() + " "; }
+function seq(t, keys){ var p = 0; for (var i = 0; i < keys.length; i++){ var k = t.indexOf(keys[i], p); if (k < 0) return false; p = k + keys[i].length; } return true; }
+function mask(c){ return c.replace(/[A-Za-zé]+/g, function(w){ return w.length <= 2 ? w : w[0] + new Array(w.length).join("_"); }); }
+function match(it, val){
+  var nv = normAns(val);
+  if (it.a && it.a.some(function(a){ return normAns(a) === nv; })) return true;
+  if (it.k){ var t = wordsOf(val); return it.k.some(function(keys){ return seq(t, keys); }); }
+  return false;
+}
+function el(tag, cls, html){ var e = document.createElement(tag); if (cls) e.className = cls; if (html != null) e.innerHTML = html; return e; }
+
+/* ---------- Exercise 1: recall (all target units) ---------- */
+var SETS = [
+ {name:"Style and price", items:[
+  {q:"дорогий, люксовий", a:["high-end"]},
+  {q:"елегантний, гладкий, обтічний", a:["sleek"]},
+  {q:"вишуканий, зі смаком, витончений", a:["sophisticated"]},
+  {q:"сучасний", a:["contemporary"]},
+  {q:"новаторський, найсучасніший", a:["cutting-edge"]},
+  {q:"шикарний, для багатих (розм.)", a:["posh"]},
+  {q:"розкішний, нарядний, з претензією", a:["fancy"]},
+  {q:"дорогуватий", a:["pricey"]},
+  {q:"традиційний", a:["traditional"]},
+  {q:"позачасовий, вічний", a:["timeless"]},
+  {q:"мінімалізм", a:["minimalism"]}
+ ]},
+ {name:"Atmosphere (positive)", items:[
+  {q:"чарівний", a:["charming"]},
+  {q:"химерний і старовинний, милий", a:["quaint"]},
+  {q:"затишний", a:["cozy","cosy"]},
+  {q:"привітний, гостинний", a:["welcoming"]},
+  {q:"привабливий, що кличе зайти", a:["inviting"]},
+  {q:"з характером, самобутній", a:["full of character"]},
+  {q:"особистий, індивідуальний", a:["personal"]},
+  {q:"усамітнений, відлюдний", a:["secluded"]},
+  {q:"заховане, у затишному закутку", a:["tucked away"]},
+  {q:"пишний (про зелень)", a:["lush"]}
+ ]},
+ {name:"Critical words", items:[
+  {q:"показний, кричущий", a:["flashy"]},
+  {q:"безсмачний, дешевий на вигляд", a:["tacky"]},
+  {q:"занадто «вилизаний»", a:["overly polished"]},
+  {q:"суворий, голий, аскетичний", a:["stark"]},
+  {q:"прісний, нецікавий", a:["bland"]},
+  {q:"потворний, жахливий", a:["hideous"]},
+  {q:"неживий", a:["lifeless"]},
+  {q:"бездушний", a:["soulless"]},
+  {q:"безликий, без характеру", a:["characterless"]},
+  {q:"непривітний", a:["unwelcoming"]},
+  {q:"який не кличе зайти (протилежне до inviting)", a:["uninviting"]}
+ ]},
+ {name:"Nouns and places", items:[
+  {q:"характер, індивідуальність", a:["character"]},
+  {q:"теплота, затишок", a:["warmth"]},
+  {q:"оригінальність", a:["originality"]},
+  {q:"щось, що ріже око; потвора", a:["eyesore"]},
+  {q:"зелень, зелені насадження", a:["greenery"]},
+  {q:"рослинність (густа, дика)", a:["vegetation"]},
+  {q:"густе склепіння з крон дерев", a:["canopy"]},
+  {q:"місце, куточок", a:["spot"]},
+  {q:"хатина, будиночок у лісі", a:["cabin"]},
+  {q:"розташування", a:["location"]},
+  {q:"містечко", a:["little town","small town"]},
+  {q:"котедж, заміський будиночок", a:["cottage"]},
+  {q:"кафе", a:["café","cafe"]},
+  {q:"інтер’єр", a:["interior"]},
+  {q:"білі стіни", a:["white walls"]},
+  {q:"дизайн", a:["design"]},
+  {q:"вигляд, зовнішній вигляд", a:["look"]},
+  {q:"будинок", a:["house"]},
+  {q:"квартира", a:["apartment","flat"]},
+  {q:"район (міста)", a:["neighborhood","neighbourhood"]},
+  {q:"ресторан", a:["restaurant"]},
+  {q:"антиутопічний фільм", a:["dystopian movie"]},
+  {q:"покинуте місто", a:["abandoned town"]},
+  {q:"радянська багатоповерхівка", a:["Soviet-era housing block"]},
+  {q:"величезні вікна", a:["huge windows"]},
+  {q:"дрібні деталі", a:["little details"]},
+  {q:"чарівне місце", a:["a charming place"]}
+ ]},
+ {name:"Patterns", items:[
+  {q:"робити все місце особливим, таким, що вирізняється", k:[["stand","out"]], c:"make the whole place stand out"},
+  {q:"надає йому … штриху або вигляду", k:[["give","touch"],["give","look"]], c:"gives it a … touch/look"},
+  {q:"має … відчуття або вигляд", k:[["has","feel"],["has","look"],["has","touch"]], c:"has a … feel to it"},
+  {q:"дещо …, з нахилом до … (про стиль)", k:[["on","side"]], c:"on the … side"},
+  {q:"майже немає … у цьому", k:[["barely","any"]], c:"there’s barely any … to it"},
+  {q:"створює … атмосферу", k:[["give","vibes"]], c:"gives … vibes"},
+  {q:"виглядає …, але не в … сенсі", k:[["not in a","way"]], c:"looks …, but not in a … way"},
+  {q:"це віддає …, нагадує … (сленг)", k:[["giving"]], c:"… is giving …"},
+  {q:"приємна дрібничка, що покращує враження", k:[["nice touch"]], c:"is a nice touch"},
+  {q:"трохи потвора, дещо ріже око", k:[["bit of an eyesore"]], c:"a bit of an eyesore"},
+  {q:"справжня, цілковита потвора", k:[["absolute","eyesore"],["complete","eyesore"]], c:"an absolute eyesore"},
+  {q:"сповнений …", k:[["full of"]], c:"full of …"},
+  {q:"втратив свій …", k:[["lost its"]], c:"lost its …"},
+  {q:"позбавити його його …", k:[["strip","of its"]], c:"strip it of its …"},
+  {q:"захована позаду нього", k:[["tucked","behind"]], c:"tucked behind it"}
+ ]}
+];
+
+function mountRecall(){
+  var root = $("#recall"), tabs = $(".tabs", root), panels = $(".panels", root), tot = $("#recall-total");
+  var N = SETS.reduce(function(a, s){ return a + s.items.length; }, 0);
+  var scores = SETS.map(function(){ return 0; });
+  function upd(){ tot.textContent = scores.reduce(function(a, b){ return a + b; }, 0) + " / " + N; }
+  upd();
+
+  SETS.forEach(function(set, si){
+    var tab = el("button", "tab" + (si === 0 ? " on" : ""), set.name + " (" + set.items.length + ")");
+    tab.type = "button";
+    tabs.appendChild(tab);
+
+    var panel = el("div", si === 0 ? "" : "hide");
+    panel.innerHTML = '<div class="toolbar">' +
+      '<button class="btn" data-a="check" type="button">Check</button>' +
+      '<button class="btn alt" data-a="hint" type="button">Hint</button>' +
+      '<button class="btn alt" data-a="reveal" type="button">Show answers</button>' +
+      '<button class="btn alt" data-a="reset" type="button">Clear</button>' +
+      '<span class="score" aria-live="polite"></span></div><div class="grid"></div>';
+    panels.appendChild(panel);
+    var grid = $(".grid", panel), sc = $(".score", panel);
+    var cards = set.items.map(function(it, i){
+      var c = el("div", "card");
+      c.innerHTML = '<p class="q"></p><div class="row"><input class="in" type="text" autocomplete="off" autocapitalize="off" spellcheck="false"><span class="mark" aria-hidden="true"></span></div><div class="aux"></div>';
+      $(".q", c).textContent = (i + 1) + ". " + it.q;
+      var inp = $("input", c);
+      inp.setAttribute("aria-label", it.q);
+      inp.addEventListener("keydown", function(e){ if (e.key === "Enter"){ checkOne(it, c); recount(); } });
+      grid.appendChild(c);
+      return c;
+    });
+    function checkOne(it, c){
+      var inp = $("input", c), m = $(".mark", c), v = inp.value.trim();
+      inp.classList.remove("ok","bad","rev"); m.textContent = "";
+      if (!v) return false;
+      var ok = match(it, v);
+      inp.classList.add(ok ? "ok" : "bad");
+      m.textContent = ok ? "✓" : "✗";
+      return ok;
+    }
+    function recount(){
+      var ok = 0;
+      cards.forEach(function(c){ if ($("input", c).classList.contains("ok")) ok++; });
+      scores[si] = ok; sc.textContent = ok + " / " + set.items.length; upd();
+    }
+    panel.addEventListener("click", function(e){
+      var a = e.target.getAttribute && e.target.getAttribute("data-a");
+      if (!a) return;
+      if (a === "check"){ set.items.forEach(function(it, i){ checkOne(it, cards[i]); }); recount(); }
+      if (a === "hint"){
+        set.items.forEach(function(it, i){
+          var c = cards[i];
+          if (!$("input", c).classList.contains("ok")) $(".aux", c).textContent = "Starts like this: " + mask(it.c || it.a[0]);
+        });
+      }
+      if (a === "reveal"){
+        set.items.forEach(function(it, i){
+          var c = cards[i], inp = $("input", c);
+          if (!inp.classList.contains("ok")){ $(".aux", c).textContent = "Answer: " + (it.c || it.a[0]); inp.classList.add("rev"); }
+        });
+      }
+      if (a === "reset"){
+        cards.forEach(function(c){ var inp = $("input", c); inp.value = ""; inp.classList.remove("ok","bad","rev"); $(".mark", c).textContent = ""; $(".aux", c).textContent = ""; });
+        recount(); sc.textContent = "";
+      }
+    });
+    tab.addEventListener("click", function(){
+      Array.prototype.forEach.call(tabs.children, function(t, ti){ t.classList.toggle("on", ti === si); });
+      Array.prototype.forEach.call(panels.children, function(p, pi){ p.classList.toggle("hide", pi !== si); });
+    });
+  });
+}
+
+/* ---------- gap-fill engine (exercises 2 and 4) ---------- */
+function parseGap(str){
+  var parts = [], re = /⟦([^⟧|]+)(?:\|(\d+))?⟧/g, last = 0, m;
+  while ((m = re.exec(str))){
+    parts.push({t: str.slice(last, m.index)});
+    parts.push({g: m[1].split("/"), n: +(m[2] || 0)});
+    last = re.lastIndex;
+  }
+  parts.push({t: str.slice(last)});
+  return parts;
+}
+function mountGaps(sel, items){
+  var root = $(sel), list = $("ol", root), sc = $(".score", root);
+  var inputs = [];
+  items.forEach(function(it){
+    var li = el("li"), mine = [];
+    parseGap(it.s).forEach(function(p){
+      if (p.g){
+        var wrap = el("span", "gap"), alts = p.g, pf = alts[0].slice(0, p.n);
+        if (pf){ var s = el("span", "pf"); s.textContent = pf; wrap.appendChild(s); }
+        var inp = el("input", "in g");
+        inp.type = "text"; inp.autocomplete = "off"; inp.spellcheck = false; inp.setAttribute("autocapitalize","off");
+        inp.style.width = (Math.max(3, alts[0].length - p.n) + 2) + "ch";
+        inp.setAttribute("aria-label", "gap");
+        inp._alts = alts; inp._pf = pf; inp._li = li; inp._col = it.col || "";
+        inp.addEventListener("keydown", function(e){ if (e.key === "Enter"){ checkInput(inp); recount(); } });
+        wrap.appendChild(inp); li.appendChild(wrap); inputs.push(inp); mine.push(inp);
+      } else if (p.t){
+        li.appendChild(document.createTextNode(p.t));
+      }
+    });
+    var col = el("span", "col"); li.appendChild(col); li._col = col;
+    list.appendChild(li);
+  });
+  function checkInput(inp){
+    inp.classList.remove("ok","bad","rev");
+    var v = inp.value.trim();
+    if (!v) return false;
+    var set = inp._alts.map(normAns);
+    var ok = set.indexOf(normAns(v)) > -1 || set.indexOf(normAns(inp._pf + v)) > -1;
+    inp.classList.add(ok ? "ok" : "bad");
+    if (ok && inp._col) inp._li._col.textContent = "Collocation: " + inp._col;
+    return ok;
+  }
+  function recount(){
+    var ok = inputs.filter(function(i){ return i.classList.contains("ok"); }).length;
+    sc.textContent = ok + " / " + inputs.length;
+  }
+  root.addEventListener("click", function(e){
+    var a = e.target.getAttribute && e.target.getAttribute("data-a");
+    if (!a) return;
+    if (a === "check"){ inputs.forEach(checkInput); recount(); }
+    if (a === "reveal"){
+      inputs.forEach(function(i){
+        if (!i.classList.contains("ok")){ i.value = i._alts[0].slice(i._pf.length); i.classList.remove("bad"); i.classList.add("rev"); if (i._col) i._li._col.textContent = "Collocation: " + i._col; }
+      });
+    }
+    if (a === "reset"){
+      inputs.forEach(function(i){ i.value = ""; i.classList.remove("ok","bad","rev"); i._li._col.textContent = ""; });
+      sc.textContent = "";
+    }
+  });
+}
+
+/* ---------- Exercise 2 data ---------- */
+var GAPS1 = [
+ "It’s a ⟦high-end|1⟧ restaurant, so a main course alone costs a fortune.",
+ "The kitchen has a ⟦sleek|2⟧, minimalist design with no visible handles.",
+ "He has such ⟦sophisticated|2⟧ taste in art and music.",
+ "It’s a ⟦contemporary|2⟧ building with a glass front and a green roof.",
+ "The lab uses ⟦cutting-edge|2⟧ technology that nobody else has yet.",
+ "They live in a ⟦posh|2⟧ neighborhood where every house has its own pool.",
+ "I don’t need anything ⟦fancy|2⟧, just a clean room and a good coffee.",
+ "The ⟦pricey|2⟧ café charges six euros for a small coffee.",
+ "The cottage has a ⟦traditional|2⟧ look: stone walls, wooden beams and an open fireplace.",
+ "Her style is ⟦timeless|2⟧: she has worn the same black coat for years and it never goes out of fashion.",
+ "It’s a ⟦quaint|2⟧ little town with narrow cobbled streets and a tiny church.",
+ "The café has ⟦charming|2⟧ little details, like mismatched cups and handwritten menus.",
+ "The living room was so ⟦cozy/cosy|2⟧ that we stayed on the sofa all evening.",
+ "The staff were so ⟦welcoming|2⟧ that we felt at home straight away.",
+ "The café looks really ⟦inviting|2⟧, with warm lights and a few tables outside.",
+ "The house is ⟦secluded|2⟧: the nearest neighbour is ten kilometres away.",
+ "The garden is full of ⟦lush|2⟧ greenery and old trees.",
+ "The hotel lobby is so ⟦flashy|2⟧: gold everywhere and a huge fountain.",
+ "The plastic flowers, the neon sign, the fake leather: it all looks really ⟦tacky|2⟧.",
+ "The apartment is ⟦overly polished|2⟧: not a single cushion is out of place.",
+ "With bare walls and a concrete floor, the room feels ⟦stark|2⟧.",
+ "The soup was ⟦bland|2⟧: no salt, no spice, no flavour.",
+ "That orange concrete tower is ⟦hideous|2⟧. It makes the whole street feel sad.",
+ "The new office feels ⟦lifeless|2⟧: no plants, no colour, no people.",
+ "The shopping centre is ⟦soulless|2⟧: it has no history and nothing special about it.",
+ "Every house on the estate is identical and ⟦characterless|2⟧.",
+ "The reception was cold and ⟦unwelcoming|2⟧; nobody even looked up.",
+ "That giant billboard is a real ⟦eyesore|2⟧: it blocks the whole view of the sea.",
+ "A thick ⟦canopy|2⟧ of leaves kept the path cool and shady.",
+ "The cabin is hidden in the ⟦vegetation|2⟧: you can barely see it from the road.",
+ "We found a lovely ⟦spot|2⟧ by the river for our picnic.",
+ "The house is in a perfect ⟦location|2⟧: five minutes from the sea.",
+ "The room lacks ⟦warmth|2⟧: there are no photos, rugs or soft lights.",
+ "The film had no ⟦originality|2⟧: I had seen the same plot a hundred times.",
+ "⟦Minimalism|2⟧ can look elegant, but this flat just feels empty.",
+ "Her ⟦personal|2⟧ touches, like family photos and handmade cushions, made the room feel like home."
+].map(function(s){ return {s: s}; });
+
+/* ---------- Exercise 4 data ---------- */
+var GAPS2 = [
+ {s:"The huge windows make the whole place stand ⟦out⟧.", col:"make the whole place stand out"},
+ {s:"The big curved sofa gives the room ⟦a⟧ soft, inviting touch.", col:"gives it a … touch"},
+ {s:"Honestly, the exterior is ⟦a⟧ bit of an eyesore.", col:"a bit of an eyesore"},
+ {s:"Honestly, the exterior is a bit ⟦of⟧ an eyesore.", col:"a bit of an eyesore"},
+ {s:"That tower is ⟦an⟧ absolute eyesore.", col:"an absolute eyesore"},
+ {s:"The new shopping centre is ⟦a⟧ complete eyesore.", col:"a complete eyesore"},
+ {s:"The little house is full ⟦of⟧ character.", col:"full of character"},
+ {s:"The street has lost ⟦its⟧ character.", col:"lost its character"},
+ {s:"The white walls strip the room ⟦of⟧ its warmth.", col:"strip it of its warmth"},
+ {s:"There’s barely ⟦any⟧ warmth to it.", col:"there’s barely any … to it"},
+ {s:"There’s barely any warmth ⟦to⟧ it.", col:"there’s barely any … to it"},
+ {s:"The house has ⟦a⟧ really contemporary feel to it.", col:"has a … feel to it"},
+ {s:"The design is on ⟦the⟧ sleek side.", col:"on the … side"},
+ {s:"It looks hideous, but not ⟦in⟧ a bad way.", col:"looks …, but not in a … way"},
+ {s:"It looks hideous, but not in a bad ⟦way⟧.", col:"looks …, but not in a … way"},
+ {s:"This café is giving cabin ⟦in⟧ the woods.", col:"… is giving …"},
+ {s:"The cottage is tucked ⟦away⟧ among the trees.", col:"tucked away"},
+ {s:"A tiny garden is tucked ⟦behind⟧ the house.", col:"tucked behind it"},
+ {s:"The cabin sits ⟦in⟧ a secluded spot.", col:"in a secluded spot"},
+ {s:"The soft lights by the door are ⟦a⟧ nice touch.", col:"is a nice touch"},
+ {s:"The whole street gives ⟦off⟧ gloomy vibes.", col:"gives off … vibes"},
+ {s:"It’s a charming place ⟦in⟧ a posh neighborhood.", col:"a charming place"}
+];
+
+/* ---------- shared unit detectors (exercises 3 and 6) ---------- */
+var U = {
+ highend:{l:"high-end", re:/high[\s-]?end/},
+ sleek:{l:"sleek", re:/\bsleek/},
+ sophisticated:{l:"sophisticated", re:/sophisticated/},
+ contemporary:{l:"contemporary", re:/contemporary/},
+ cuttingedge:{l:"cutting-edge", re:/cutting[\s-]?edge/},
+ posh:{l:"posh", re:/\bposh/},
+ fancy:{l:"fancy", re:/\bfancy/},
+ pricey:{l:"pricey", re:/\bpricey/},
+ traditional:{l:"traditional", re:/traditional/},
+ timeless:{l:"timeless", re:/timeless/},
+ charming:{l:"charming", re:/charming/},
+ quaint:{l:"quaint", re:/quaint/},
+ cozy:{l:"cozy", re:/\bco[sz]y/},
+ welcoming:{l:"welcoming", re:/\bwelcoming/},
+ inviting:{l:"inviting", re:/\binviting/},
+ personal:{l:"personal", re:/personal/},
+ secluded:{l:"secluded", re:/secluded/},
+ lush:{l:"lush", re:/\blush\b/},
+ flashy:{l:"flashy", re:/flashy/},
+ tacky:{l:"tacky", re:/tacky/},
+ overly:{l:"overly polished", re:/overly polished/},
+ stark:{l:"stark", re:/\bstark/},
+ bland:{l:"bland", re:/\bbland/},
+ hideous:{l:"hideous", re:/hideous/},
+ lifeless:{l:"lifeless", re:/lifeless/},
+ soulless:{l:"soulless", re:/soulless/},
+ characterless:{l:"characterless", re:/characterless/},
+ unwelcoming:{l:"unwelcoming", re:/unwelcoming/},
+ uninviting:{l:"uninviting", re:/uninviting/},
+ tuckedaway:{l:"tucked away / behind it", re:/tucked (away|behind)/},
+ fullofchar:{l:"full of character", re:/full of character/},
+ eyesore:{l:"eyesore", re:/eyesore/},
+ greenery:{l:"greenery", re:/greenery/},
+ vegetation:{l:"vegetation", re:/vegetation/},
+ canopy:{l:"canopy", re:/canopy/},
+ spot:{l:"spot", re:/\bspot\b/},
+ cabin:{l:"cabin", re:/\bcabin/},
+ location:{l:"location", re:/\blocation/},
+ warmth:{l:"warmth", re:/\bwarmth/},
+ originality:{l:"originality", re:/originality/},
+ character:{l:"character", re:/\bcharacter\b/},
+ minimalism:{l:"minimalism", re:/minimalis[mt]/},
+ whitewalls:{l:"white walls", re:/white walls?/},
+ hugewindows:{l:"huge windows", re:/huge windows?/},
+ littledetails:{l:"little details", re:/little details?/},
+ littletown:{l:"little town", re:/little town/},
+ cottage:{l:"cottage", re:/\bcottage/},
+ dystopian:{l:"dystopian movie", re:/dystopian/},
+ abandoned:{l:"abandoned town", re:/abandoned town/},
+ soviet:{l:"Soviet-era housing block", re:/soviet/},
+ standout:{l:"make the whole place stand out", re:/stand(s)? out/},
+ touchlook:{l:"gives it a … touch/look", re:/\bgive[sn]?\b[^.]{0,40}\b(touch|look)\b/},
+ feelto:{l:"has a … feel to it", re:/\b(has|have)\b[^.]{0,40}\b(feel|look|touch)\b[^.]{0,6}\bto it/},
+ side:{l:"on the … side", re:/\bon the [\w-]+ side/},
+ barely:{l:"there’s barely any … to it", re:/barely any|there's (barely|some) /},
+ vibes:{l:"gives … vibes", re:/\bvibes?\b/},
+ notinaway:{l:"looks …, but not in a … way", re:/not in a [\w\s-]{0,30}way/},
+ isgiving:{l:"… is giving …", re:/\b(is|it's|'s) giving\b/},
+ nicetouch:{l:"is a nice touch", re:/nice touch/},
+ abitofan:{l:"a bit of an …", re:/a bit of an? /},
+ absolute:{l:"an absolute / a complete …", re:/\b(an absolute|a complete) /},
+ fullof:{l:"full of …", re:/full of/},
+ lostits:{l:"lost its …", re:/lost its/},
+ strip:{l:"strip it of its …", re:/\bstrip(s|ped)?\b[^.]{0,30}\bof (its|their)\b/},
+ m_overly:{l:"overly", re:/\boverly\b/},
+ m_somewhat:{l:"somewhat", re:/somewhat/},
+ m_absolutely:{l:"absolutely", re:/\b(absolutely|utterly|completely)\b/},
+ m_downright:{l:"downright", re:/downright/},
+ m_genuinely:{l:"genuinely", re:/genuinely/},
+ m_effortlessly:{l:"effortlessly", re:/effortlessly/}
+};
+function detect(text){
+  var t = text.toLowerCase().replace(/[’]/g, "'");
+  var found = {};
+  Object.keys(U).forEach(function(k){ if (U[k].re.test(t)) found[k] = true; });
+  return found;
+}
+
+/* ---------- Exercise 3 ---------- */
+var UPG = [
+ {p:"The new hotel looks very expensive and fashionable.", u:["highend","posh","fancy","pricey","side","sleek","flashy"], m:"The new hotel is on the posh side: it looks very high-end and sleek."},
+ {p:"The old house is not modern, but it is lovely.", u:["traditional","charming","timeless","quaint","nicetouch"], m:"The old house has a charming, traditional look that feels timeless."},
+ {p:"The room is white, empty and a bit cold.", u:["stark","strip","whitewalls","lifeless","unwelcoming","warmth"], m:"The white walls strip the room of its warmth, so it feels stark and a bit unwelcoming."},
+ {p:"The building is ugly, but I like it.", u:["notinaway","eyesore","hideous","fullofchar","abitofan"], m:"It looks hideous, but not in a bad way: it’s full of character."},
+ {p:"The empty square looks like a scene from a film about the future.", u:["dystopian","vibes","isgiving","abandoned","soulless"], m:"The empty square gives off dystopian-movie vibes."},
+ {p:"The garden has many green plants and big trees that give shade.", u:["lush","greenery","vegetation","canopy"], m:"Lush greenery and a thick canopy of trees make the garden feel like a jungle."},
+ {p:"The café is boring and has no personality.", u:["bland","barely","characterless","lifeless","lostits"], m:"The café feels bland: there’s barely any character to it."},
+ {p:"Small lights near the door make the entrance nicer.", u:["nicetouch","touchlook","littledetails","inviting","welcoming"], m:"The soft lights by the door are a nice touch; they make the entrance feel more inviting."},
+ {p:"The cottage is far from everyone and hard to find.", u:["secluded","tuckedaway","location","spot","cabin"], m:"The cottage is tucked away in a secluded spot."},
+ {p:"Everything looks too perfect and too expensive, like in a magazine.", u:["overly","flashy","sleek","highend","tacky","sophisticated"], m:"It feels overly polished, almost too sleek and high-end to live in."}
+];
+function mountUpgrade(){
+  var root = $("#upgrade");
+  UPG.forEach(function(it, i){
+    var card = el("div", "card");
+    card.innerHTML = '<p class="plain"></p><p class="label">Use at least two of these:</p><div class="chips"></div>' +
+      '<textarea aria-label="Your sentence" placeholder="Write your sentence here…"></textarea>' +
+      '<p class="status" aria-live="polite">Use at least two units.</p>' +
+      '<button class="btn alt" type="button" style="margin-top:10px">Show model</button><div class="model hide"></div>';
+    $(".plain", card).textContent = (i + 1) + ". " + it.p;
+    var chips = $(".chips", card), cmap = {};
+    it.u.forEach(function(k){ var c = el("span", "chip"); c.textContent = U[k].l; chips.appendChild(c); cmap[k] = c; });
+    var ta = $("textarea", card), st = $(".status", card), model = $(".model", card), btn = $(".btn", card);
+    model.textContent = "Model: " + it.m;
+    ta.addEventListener("input", function(){
+      var f = detect(ta.value), n = 0;
+      it.u.forEach(function(k){ var on = !!f[k]; cmap[k].classList.toggle("on", on); if (on) n++; });
+      st.textContent = n === 0 ? "Use at least two units." : n === 1 ? "One unit used. Add one more." : "Good: " + n + " units used. Now compare with the model.";
+    });
+    btn.addEventListener("click", function(){
+      var hidden = model.classList.toggle("hide");
+      btn.textContent = hidden ? "Show model" : "Hide model";
+    });
+    root.appendChild(card);
+  });
+}
+
+/* ---------- Exercise 5 ---------- */
+var MCQ = [
+ {s:"The tower is ____ hideous: I can’t even look at it.", o:["very","absolutely","slightly"], a:1, w:"Hideous is already an extreme adjective, so it takes absolutely, utterly or downright, not very."},
+ {s:"The apartment is ____ polished: it feels like a showroom, not a home.", o:["somewhat","overly","barely"], a:1, w:"Overly means too much, so it turns polished into a criticism."},
+ {s:"The restaurant is ____ on the pricey side, but the food is worth it.", o:["a bit","absolutely","utterly"], a:0, w:"A bit softens the point. Absolutely and utterly go with extreme adjectives, not with on the … side."},
+ {s:"There’s ____ any warmth in this room.", o:["barely","nearly","almost"], a:0, w:"Barely any means almost none. Nearly any and almost any are not natural English."},
+ {s:"The café has a ____ charming, old-fashioned look.", o:["genuinely","hardly","overly"], a:0, w:"Genuinely adds sincerity to a compliment. Overly would turn it into a criticism."},
+ {s:"The cottage is ____ tucked away behind the trees.", o:["beautifully","hardly","highly"], a:0, w:"Beautifully is the natural partner of tucked away. Highly does not collocate with it."},
+ {s:"The new mall is ____ soulless: it could be anywhere in the world.", o:["completely","barely","hardly"], a:0, w:"Completely and totally strengthen a strong adjective. Barely and hardly would reverse the meaning."},
+ {s:"The building looks ____ lifeless, but the garden saves it.", o:["somewhat","utterly","downright"], a:0, w:"Somewhat softens the adjective, which fits the contrast with but. Utterly and downright make it stronger."},
+ {s:"The sofa is ____ tacky: it’s covered in gold glitter.", o:["downright","hardly","barely"], a:0, w:"Downright adds strong, negative emphasis. Hardly and barely mean almost not."},
+ {s:"The design is ____ dramatic: the concrete walls are huge.", o:["pretty","hardly","barely"], a:0, w:"Pretty here means quite, a gentle intensifier. Hardly and barely reverse the meaning."}
+];
+function mountMcq(){
+  var root = $("#mcq"), box = $(".stack", root), sc = $(".score", root), done = 0, right = 0;
+  function upd(){ sc.textContent = done ? right + " / " + MCQ.length : ""; }
+  function build(){
+    box.innerHTML = ""; done = 0; right = 0; upd();
+    MCQ.forEach(function(q, i){
+      var card = el("div", "card");
+      var p = el("p", "mq"); p.textContent = (i + 1) + ". " + q.s;
+      var opts = el("div", "opts"), why = el("p", "why hide");
+      why.textContent = q.w;
+      q.o.forEach(function(o, oi){
+        var b = el("button", "opt"); b.type = "button"; b.textContent = o;
+        b.addEventListener("click", function(){
+          var all = opts.querySelectorAll(".opt");
+          Array.prototype.forEach.call(all, function(x){ x.disabled = true; });
+          if (oi === q.a){ b.classList.add("right"); right++; }
+          else { b.classList.add("wrong"); all[q.a].classList.add("right"); }
+          why.classList.remove("hide"); done++; upd();
+        });
+        opts.appendChild(b);
+      });
+      card.appendChild(p); card.appendChild(opts); card.appendChild(why);
+      box.appendChild(card);
+    });
+  }
+  build();
+  root.addEventListener("click", function(e){ if (e.target.getAttribute && e.target.getAttribute("data-a") === "reset") build(); });
+}
+
+/* ---------- Exercise 6 ---------- */
+var GROUPS = [
+ {t:"Adjectives and adjective phrases", k:["highend","sleek","sophisticated","contemporary","cuttingedge","posh","fancy","pricey","traditional","timeless","charming","quaint","cozy","welcoming","inviting","personal","secluded","lush","flashy","tacky","overly","stark","bland","hideous","lifeless","soulless","characterless","unwelcoming","uninviting","tuckedaway","fullofchar"]},
+ {t:"Nouns and places", k:["eyesore","greenery","vegetation","canopy","spot","cabin","location","warmth","originality","character","minimalism","whitewalls","hugewindows","littledetails","littletown","cottage","dystopian","abandoned","soviet"]},
+ {t:"Patterns", k:["standout","touchlook","feelto","side","barely","vibes","notinaway","isgiving","nicetouch","abitofan","absolute","fullof","lostits","strip"]},
+ {t:"Modifiers", k:["m_overly","m_somewhat","m_absolutely","m_downright","m_genuinely","m_effortlessly"]}
+];
+function mountCreate(){
+  var ta = $("#essay"), cnt = $("#cnt"), host = $("#chipgroups"), cmap = {};
+  GROUPS.forEach(function(g){
+    var d = el("div", "group"); d.innerHTML = "<h3></h3><div class='chips'></div>";
+    $("h3", d).textContent = g.t;
+    var cc = $(".chips", d);
+    g.k.forEach(function(k){ var c = el("span", "chip"); c.textContent = U[k].l; cc.appendChild(c); cmap[k] = c; });
+    host.appendChild(d);
+  });
+  function upd(){
+    var f = detect(ta.value), n = 0;
+    Object.keys(cmap).forEach(function(k){ var on = !!f[k]; cmap[k].classList.toggle("on", on); if (on) n++; });
+    cnt.textContent = n;
+  }
+  ta.addEventListener("input", upd);
+  $("#clearEssay").addEventListener("click", function(){ ta.value = ""; upd(); $("#copied").textContent = ""; });
+  $("#copy").addEventListener("click", function(){
+    var out = $("#copied");
+    function ok(){ out.textContent = "Copied."; }
+    function fail(){ ta.select(); out.textContent = "Press Ctrl+C to copy."; }
+    if (navigator.clipboard && navigator.clipboard.writeText){ navigator.clipboard.writeText(ta.value).then(ok, fail); } else { fail(); }
+  });
+}
+
+mountRecall();
+mountGaps("#gaps1", GAPS1);
+mountUpgrade();
+mountGaps("#gaps2", GAPS2);
+mountMcq();
+mountCreate();
+})();
+</script>
+</body>
+</html>
